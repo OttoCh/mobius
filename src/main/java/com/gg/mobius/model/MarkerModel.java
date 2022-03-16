@@ -1,6 +1,7 @@
 package com.gg.mobius.model;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -27,12 +28,13 @@ public class MarkerModel {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+    @Column(name = "places_id")
     private String placesId;
     private double longitude;
     private double latitude;
 
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "housingId", referencedColumnName = "id")
+    @JoinColumn(name = "housing_id", referencedColumnName = "id")
     private HousingModel housing;
     
 }
