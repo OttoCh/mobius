@@ -18,4 +18,20 @@ public class MarkerService {
         return repository.findAll();
     }
 
+    public MarkerModel findOne(Long id) {
+        return repository.findById(id).get();
+    }
+
+    public void create(MarkerModel newMarker) {
+        repository.save(newMarker);
+    }
+
+    public void update(MarkerModel updatedMarker) {
+        repository.save(updatedMarker);
+    }
+
+    public void delete(MarkerModel deleteMarker) {
+        repository.delete(deleteMarker);
+    }
+
 }
